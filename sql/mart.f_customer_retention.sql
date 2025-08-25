@@ -1,6 +1,3 @@
-delete from mart.f_customer_retention
-where period_id = (select week_of_year from mart.d_calendar dc where dc.date_actual::Date = '{{ds}}');
-
 insert into mart.f_customer_retention (
     new_customers_count, returning_customers_count, refunded_customer_count, period_name, period_id,
     item_id, new_customers_revenue, returning_customers_revenue, customers_refunded
